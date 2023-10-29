@@ -33,8 +33,13 @@ def create_app(test_config=None):
     @app.route('/howdy')
     def howdy():
         return 'Howdy'
+    
+
+    from . import db
+    db.init_app(app)
 
     return app
+
     
     
     

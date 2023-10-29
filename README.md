@@ -23,3 +23,11 @@ pipenv install pipenv shell
 ```sh
 flask --app flaskr run --debug --port 5555
 ```
+
+
+
+### Flask notes
+1. to initialize the database using the init-db command added to command line:
+```sh
+flask --app flaskr init-db
+```
