@@ -12,7 +12,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        db= get_db()
+        db = get_db()
         error = None
 
         if not username:
@@ -25,7 +25,7 @@ def register():
                     "INSERT INTO user (username, password) VALUES (?, ?)",
                     (username, generate_password_hash(password)),
                 )
-                db.commmit()
+                db.commit()
             except db.IntegrityError:
                 error = f"User {username} is already registered!"
             else:
