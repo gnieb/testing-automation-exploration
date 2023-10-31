@@ -22,7 +22,7 @@ def register():
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user(username, password) VALUES (?, ?)"
+                    "INSERT INTO user (username, password) VALUES (?, ?)",
                     (username, generate_password_hash(password)),
                 )
                 db.commmit()
@@ -32,7 +32,7 @@ def register():
                 return redirect(url_for("auth.login"))
             
             flash(error)
-        return render_template('auth/register/html')
+    return render_template('auth/register.html')
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
